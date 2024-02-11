@@ -15,8 +15,8 @@ upstream:
   package: infra/workload-cluster/cluster-capi
   revision: $input.cluster[0].spec.revision
 downstream:
-  repository: mgmt
-  package: infra/workload-cluster/cluster-capi
+  repository: repo-target
+  package: mgmt/infra/workload-cluster/cluster-capi
 packageContext:
   inputs:
   - apiVersion: claim.nephio.org/v1alpha1
