@@ -1,0 +1,27 @@
+# select the upstream package based on some criteria
+# option1: list all pkgrevs, select the latest -> watch all pkgrevs to get updates
+# option2: pin to a specific revision and select a specifc implementation
+# option3: use criteria in the 
+
+# CAPI specific cluster implementation
+# selected using selctors
+apiVersion: config.pkg.kform.dev/v1alpha1
+kind: PackageVariant
+metadata:
+  name: input.cluster[0].metadata.name-workloadcluster
+  namespace: input.cluster[0].metadata.namespace
+upstream:
+  repository: catalog
+  package: infra/workload-cluster/cluster-capi
+  revision: $input.cluster[0].spec.revision
+downstream:
+  repository: mgmt
+  package: $input.cluster[0].metadata.name-workloadcluster
+packageContext:
+  inputs:
+  - apiVersion: claim.nephio.org/v1alpha1
+    kind: ClusterCapi
+    metadata:
+      name: input.cluster[0].metadata.name
+      namespace: input.cluster[0].metadata.namespace
+    spec: #tbd
