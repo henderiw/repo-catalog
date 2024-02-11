@@ -11,12 +11,12 @@ metadata:
   name: input.cluster[0].metadata.name-workloadcluster
   namespace: input.cluster[0].metadata.namespace
 upstream:
-  repository: catalog
+  repository: repo-catalog
   package: infra/workload-cluster/cluster-capi
   revision: $input.cluster[0].spec.revision
 downstream:
   repository: mgmt
-  package: $input.cluster[0].metadata.name-workloadcluster
+  package: infra/workload-cluster/cluster-capi
 packageContext:
   inputs:
   - apiVersion: claim.nephio.org/v1alpha1
