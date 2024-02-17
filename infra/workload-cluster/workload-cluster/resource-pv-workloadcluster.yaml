@@ -13,7 +13,7 @@ metadata:
 upstream:
   repository: repo-catalog
   package: infra/workload-cluster/cluster-capi
-  revision: $input.cluster[0].spec.revision
+  revision: input.cluster[0].spec.revision
 downstream:
   repository: repo-target
   package: mgmt/infra/workload-cluster/cluster-capi
