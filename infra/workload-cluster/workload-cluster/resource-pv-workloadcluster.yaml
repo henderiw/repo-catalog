@@ -10,18 +10,19 @@ kind: PackageVariant
 metadata:
   name: input.cluster[0].metadata.name-workloadcluster
   namespace: input.cluster[0].metadata.namespace
-upstream:
-  repository: repo-catalog
-  package: infra/workload-cluster/cluster-capi
-  revision: input.cluster[0].spec.revision
-downstream:
-  repository: repo-target
-  package: mgmt/infra/workload-cluster/cluster-capi
-packageContext:
-  inputs:
-  - apiVersion: claim.nephio.org/v1alpha1
-    kind: ClusterCapi
-    metadata:
-      name: input.cluster[0].metadata.name
-      namespace: input.cluster[0].metadata.namespace
-    spec: #tbd
+spec:
+  upstream:
+    repository: repo-catalog
+    package: infra/workload-cluster/cluster-capi
+    revision: input.cluster[0].spec.revision
+  downstream:
+    repository: repo-target
+    package: mgmt/infra/workload-cluster/cluster-capi
+  packageContext:
+    inputs:
+    - apiVersion: claim.nephio.org/v1alpha1
+      kind: ClusterCapi
+      metadata:
+        name: input.cluster[0].metadata.name
+        namespace: input.cluster[0].metadata.namespace
+      spec: #tbd
