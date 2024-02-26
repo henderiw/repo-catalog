@@ -1,0 +1,9 @@
+apiVersion: bootstrap.cluster.x-k8s.io/v1beta1
+kind: KubeadmConfigTemplate
+metadata:
+  name: kind-worker-kubeadmconfigtemplate
+  namespace: input.context[0].metadata.name
+  annotations:
+    kform.dev/block-type: data
+    kform.dev/resource-type: kubernetes_manifest
+    kform.dev/resource-id: kubeadmconfigtemplate

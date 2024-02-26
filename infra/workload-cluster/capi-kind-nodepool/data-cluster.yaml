@@ -1,0 +1,9 @@
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: Cluster
+metadata:
+  name: input.context[0].spec.clusterName
+  namespace: input.context[0].metadata.name
+  annotations:
+    kform.dev/block-type: data
+    kform.dev/resource-type: kubernetes_manifest
+    kform.dev/resource-id: cluster
