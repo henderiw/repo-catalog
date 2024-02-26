@@ -1,0 +1,13 @@
+apiVersion: claim.nephio.org/v1alpha1
+kind: ClusterCapiKind
+metadata:
+  name: example
+  namespace: default
+  annotations:
+    kform.dev/block-type: input
+    kform.dev/resource-id: cluster
+    kform.dev/default: "true"
+spec:
+  location: us-west1
+  version:  v1.27.2
+  replicas: 3
