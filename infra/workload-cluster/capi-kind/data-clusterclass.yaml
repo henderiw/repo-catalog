@@ -6,4 +6,4 @@ metadata:
   annotations:
     kform.dev/block-type: data
     kform.dev/resource-type: kubernetes_manifest
-    kform.dev/resource-id: clusterClass
+    kform.dev/resource-id: clusterClass 

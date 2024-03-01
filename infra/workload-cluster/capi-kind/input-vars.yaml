@@ -9,6 +9,6 @@ metadata:
     kform.dev/default: "true"
 spec: 
   location: example
-  version: v1.26.3
+  version: v1.27.1
   serviceDomain: cluster.local
   controlPlaneRedundancy: false

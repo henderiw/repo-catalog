@@ -13,7 +13,7 @@ spec:
       cidrBlocks:
       - 10.128.0.0/12
   topology:
-    class: kubernetes_manifest.clusterClass[0].metadata.name
+    class: data.kubernetes_manifest.clusterClass[0].metadata.name
     controlPlane:
       metadata: {}
       replicas: 'input.context[0].spec.controlPlaneRedundancy == true ? 3 : 1'
