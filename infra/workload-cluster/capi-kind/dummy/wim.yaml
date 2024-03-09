@@ -1,5 +1,0 @@
-apiVersion: wim/v1beta1
-kind: Wim
-metadata:
-  name: wim
-  namespace: default
