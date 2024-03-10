@@ -1,14 +1,14 @@
 apiVersion: cluster.x-k8s.io/v1beta1
 kind: Cluster
 metadata:
-  name: input.context[0].metadata.name
-  namespace: input.context[0].metadata.namespace
+  name: edge01
+  namespace: default
 spec:
   clusterNetwork:
     pods:
       cidrBlocks:
       - 192.168.0.0/16
-    serviceDomain: input.context[0].spec.serviceDomain
+    serviceDomain: cluster.local
     services:
       cidrBlocks:
       - 10.128.0.0/12
@@ -18,7 +18,7 @@ spec:
       metadata: {}
       replicas: 1
     variables:
-    version: input.context[0].spec.version
+    version: v1.27.2
     #workers:
     #  machineDeployments:
     #  - class: docker-default-worker
