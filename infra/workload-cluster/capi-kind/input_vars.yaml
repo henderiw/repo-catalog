@@ -1,0 +1,14 @@
+apiVersion: claim.kform.dev/v1alpha1
+kind: Cluster
+metadata:
+  name: example
+  namespace: example
+  annotations:
+    kform.dev/block-type: input
+    kform.dev/resource-id: context ## this serves as a way to add default and manage the merge 
+    kform.dev/default: "true"
+spec: 
+  location: example
+  version: v1.27.1
+  serviceDomain: cluster.local
+  controlPlaneRedundancy: false
